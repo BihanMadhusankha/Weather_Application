@@ -5,6 +5,12 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
 }
+.container_heading{
+    background-image: url("https://images.pexels.com/photos/209831/pexels-photo-209831.jpeg?auto=compress&cs=tinysrgb&w=400");
+    height: 45vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .nav{
     list-style-type: none;
     margin: 0;
@@ -28,12 +34,7 @@ a{
 a:hover{
     text-decoration: underline;
 }
-.container_heading{
-    background-image: url("https://images.pexels.com/photos/209831/pexels-photo-209831.jpeg?auto=compress&cs=tinysrgb&w=400");
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+
 .png_header{
     height: 10vh;
     display: flex;
@@ -41,6 +42,7 @@ a:hover{
     justify-content: center;
     align-items: center;
     gap: 10px;
+    margin-bottom: 2rem;
 }
 .welcome_heading{
     padding-top: 2rem;
@@ -58,7 +60,7 @@ a:hover{
     align-items: center;
    
 }
-#Serach_bar{
+.form-control{
     height: 40px;
     width: 1000px;
     border: 1px solid black;
@@ -78,4 +80,158 @@ a:hover{
     cursor: pointer;
     font-size: 15px;
     font-weight: bold;
+}
+/*current_weather*/
+
+.container_currentweather{
+    background-size: cover;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    
+   
+}
+.current_weather_heading{
+    background-size:contain;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    color: black !important;
+    background-color:darkgrey;
+    padding: 15px;
+    margin: 20px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+    gap: 10px;
+}
+.current_weather_data_row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px;
+    padding: 15px;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    height: 150px;
+}
+.current_weather_data_row:hover{
+    transition:  transform 0.6s ease;
+    transform: scale(1.03); 
+   
+}
+.current_weather_twoPart{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    padding: 15px;
+    color: black;
+    gap: 20px;
+}
+.table_current_location,th,td {
+    color: white;
+    margin: 20px 0;
+    font-size: 18px;
+    overflow: hidden;
+    border: 1px solid ;
+    margin: 0 20px;
+    padding: 15px;
+}
+th,td{
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid ;
+    border-right: 1px solid ;
+    border-collapse: collapse;
+    background-color: darkgrey;
+    justify-content:space-between;
+   
+   
+}
+th i{
+    margin-right: 5px;
+}
+
+/*weather forcasting*/
+
+.container_forcast_weather_datar{
+    background-size: cover;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    
+   
+}
+.forcast_weather_data_heading{
+    background-size:contain;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    color: black !important;
+    background-color:darkgrey;
+    padding: 15px;
+    margin: 20px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+    gap: 10px;
+}
+.forcast_weather_data_row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    padding: 15px;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 10px;
+    height:auto;
+    gap: 20px;
+}
+
+.table_forcast_weather_data,th,td {
+    color: white;
+    margin: 20px 0;
+    font-size: 18px;
+    overflow: hidden;
+    border: 1px solid ;
+    margin: 0 20px;
+    padding: 15px;
+}
+th,td{
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid ;
+    border-right: 1px solid ;
+    border-collapse: collapse;
+    background-color: darkgrey;
+    justify-content:space-between;
+   
+   
+}
+th i{
+    margin-right: 5px;
+}
+.date{
+   margin-right: 10px;
 }

@@ -1,34 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Application</title>
     <link rel="stylesheet" href="Style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
-   
+
     <div class="container_heading">
         <nav>
             <ul class="nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="About.html">Current</a></li>
                 <li><a href="Contact.html">Forcast</a></li>
-                
+
             </ul>
         </nav>
         <div class="png_header">
             <img src="./Images//erth.png" alt="erth">
             <h1 class="welcome_heading">WELCOME YOUR WEATHER APP</h1>
         </div>
-        
-        <div class="search_container">
-            <input type="text" name="Serach_bar" id="Serach_bar" aria-label="Serach_bar" />
-            <button type="submit" name="Search" id="Search_btn">Search</button>
-        </div>
-        
-    </div>
-    
 
+        <div class="search_container">
+           
+                <input type="text" class="form-control" id="Search_bar" aria-label="Search bar" placeholder="Enter city or ZIP code" />
+                <button type="submit" name="Search" id="Search_btn">Search</button>
+           
+        </div>
+
+    </div>
+    <div class="container_currentweather">
+
+        <h1 class="current_weather_heading">Current Weather<i class="fa-solid fa-leaf"
+                style="color: #38be13; font-size: 40px;"></i></h1>
+
+        <div class="current_weather_data_row">
+            <div class="current_weather_twoPart">
+                <img width="70" height="70" src="" id="currentWeatherImage" alt="Icon" />
+                
+                <div class="current_weather_values">
+                    <p id="currentLocation">location</p>
+                    <h1 id="currentTempreture" >tempruture</h1>
+                    <p id="currentWeather">weather</p>
+                </div>
+                
+            </div>
+            
+            <h1>CurrentValue</h1>
+        </div>
+        <table class="table_current_location">
+            <tr>
+                <th><i class="fa-solid fa-thumbtack" style="color: #f41010;"></i>Location</th>
+
+                <th><i class="fa-solid fa-temperature-three-quarters" style="color: #e52e2e; "></i>Temperature</th>
+                <th><i class="fa-solid fa-snowflake" style="color: #63E6BE;"></i>Humidity</th>
+                <th><i class="fa-solid fa-leaf" style="color: #38be13;"></i>Wind Speed</th>
+                <th><i class="fa-solid fa-droplet" style="color: #74C0FC;"></i>Condition</th>
+                <th><i class="fa-solid fa-earth-americas" style="color: #B197FC;"></i>Region</th>
+                <th><i class="fa-solid fa-map" style="color: #f78708;"></i>Country</th>
+                <th><i class="fa-solid fa-info" style="color: #1060ea;"></i>longitude</th>
+                <th><i class="fa-solid fa-info" style="color: #a107da;"></i>latitude</th>
+            </tr>
+            <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+            </tr>
+
+        </table>
+    </div>
+    <!-- forcast weather -->
+    <div class="container_forcast_weather_datar">
+
+        <h1 class="forcast_weather_data_heading">Weather Forcasting<i class="fa-solid fa-map" style="color: #f78708;"></i></h1>
+
+        <div class="forcast_weather_data_row">
+            <div class="date">
+                <label for="start_date">To:</label><input type="date" name="start_date" id="start_date" aria-label="start_date">
+            </div>
+            <div class="date">
+                <label for="start_date">End:</label><input type="date" name="start_date" id="start_date" aria-label="start_date">
+            </div>
+            <div class="date">
+                <label for="start_date">Search Date:</label><input type="date" name="start_date" id="start_date" aria-label="start_date">
+            </div>
+            
+        </div>
+        <table class="table_forcast_weather_data">
+            <tr>
+                <th>Location</th>
+                <th>Temperature</th>
+                <th>Humidity</th>
+                <th>Wind Speed</th>
+                <th>Condition</th>
+                <th>Region</th>
+                <th>Country</th>
+                
+            </tr>
+            <tr style="height: max-content;">
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+                <td>Alfreds Futterkiste</td>
+                
+            </tr>
+            <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+                <td>Alfreds Futterkiste</td>
+                
+            </tr>
+
+        </table>
+    </div>
+    <!-- Map -->
+     <div class="container_forcast_weather_datar">
+        <h1 class="forcast_weather_data_heading">Map<i class="fa-solid fa-map" style="color: #f78708;"></i></h1>
+
+        <div class="forcast_weather_data_row">
+            
+        </div>
+    </div>
+    <!-- Footer -->
+
+    <script src="./Server/server.js">  
+    </script>  
 </body>
+
 </html>
