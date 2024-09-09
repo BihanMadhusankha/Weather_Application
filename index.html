@@ -21,7 +21,7 @@
             </ul>
         </nav>
         <div class="png_header">
-            <img src="./Images//erth.png" alt="erth">
+            <img id="png_erth" src="./Images//erth.png" alt="erth">
             <h1 class="welcome_heading">WELCOME YOUR WEATHER APP</h1>
         </div>
 
@@ -50,10 +50,10 @@
                 
             </div>
             
-            <h1>CurrentValue</h1>
+            <h1 id="clock">00:00:00</h1>
         </div>
         <table class="table_current_location">
-            <tr>
+            <tr class="table_topic">
                 <th><i class="fa-solid fa-thumbtack" style="color: #f41010;"></i>Location</th>
 
                 <th><i class="fa-solid fa-temperature-three-quarters" style="color: #e52e2e; "></i>Temperature</th>
@@ -65,16 +65,16 @@
                 <th><i class="fa-solid fa-info" style="color: #1060ea;"></i>longitude</th>
                 <th><i class="fa-solid fa-info" style="color: #a107da;"></i>latitude</th>
             </tr>
-            <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
+            <tr class="table_topic">
+                <td id="searchLocation">Alfreds Futterkiste</td>
+                <td id="searchTemprature">Maria Anders</td>
+                <td id="searchHumidity">Germany</td>
+                <td id="searchWindSpeed">Alfreds Futterkiste</td>
+                <td id="searchCondition">Maria Anders</td>
+                <td id="searchRegion">Germany</td>
+                <td id="searchCountry">Alfreds Futterkiste</td>
+                <td id="searchLongitude">Maria Anders</td>
+                <td id="searchLatitude">Germany</td>
             </tr>
 
         </table>
@@ -84,47 +84,36 @@
 
         <h1 class="forcast_weather_data_heading">Weather Forcasting<i class="fa-solid fa-map" style="color: #f78708;"></i></h1>
 
-        <div class="forcast_weather_data_row">
-            <div class="date">
-                <label for="start_date">To:</label><input type="date" name="start_date" id="start_date" aria-label="start_date">
-            </div>
-            <div class="date">
-                <label for="start_date">End:</label><input type="date" name="start_date" id="start_date" aria-label="start_date">
-            </div>
-            <div class="date">
-                <label for="start_date">Search Date:</label><input type="date" name="start_date" id="start_date" aria-label="start_date">
-            </div>
-            
-        </div>
-        <table class="table_forcast_weather_data">
-            <tr>
-                <th>Location</th>
-                <th>Temperature</th>
-                <th>Humidity</th>
-                <th>Wind Speed</th>
-                <th>Condition</th>
-                <th>Region</th>
-                <th>Country</th>
+        
+        <table class="table_forcast_weather_data" >
+            <tr  class="table_topic">
+                <th id="weekDays1">Sunday</th>
+                <th id="weekDays2">Monday</th>
+                <th id="weekDays3">Tuesday</th>
+                <th id="weekDays4">Wednesday</th>
+                <th id="weekDays5">Thursday</th>
+                <th id="weekDays6">Friday</th>
+                <th id="weekDays7">Saturday</th>
                 
             </tr>
-            <tr style="height: max-content;">
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
-                <td>Alfreds Futterkiste</td>
+            <tr style="height: max-content;"  class="table_topic">
+                <td ><img src="https://img.icons8.com/?size=100&id=RcBBZX2XlWJV&format=png&color=000000" id="imageWeather1" alt=""></td>
+                <td> <img src="https://img.icons8.com/?size=100&id=iFk18swetEyt&format=png&color=000000" id="imageWeather2" alt="" ></td>
+                <td> <img src="https://img.icons8.com/?size=100&id=PWMoLR7WpGdB&format=png&color=000000" id="imageWeather3" alt="" ></td>
+                <td> <img src="https://img.icons8.com/?size=100&id=YvIhEdMiVarq&format=png&color=000000" id="imageWeather4" alt="" ></td>
+                <td> <img src="https://img.icons8.com/?size=100&id=bcQLrpxKtqid&format=png&color=000000" id="imageWeather5" alt=""></td>
+                <td> <img src="https://img.icons8.com/?size=100&id=PWMoLR7WpGdB&format=png&color=000000"  id="imageWeather6" alt=""></td>
+                <td> <img src="https://img.icons8.com/?size=100&id=iFk18swetEyt&format=png&color=000000" id="imageWeather7" alt=""></td>
                 
             </tr>
-            <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
-                <td>Alfreds Futterkiste</td>
+            <tr  class="table_topic">
+                <td id="temp1">10 °C</td>
+                <td id="temp2">20 °C</td>
+                <td id="temp3">30 °C</td>
+                <td id="temp4">40 °C</td>
+                <td id="temp5">50 °C</td>
+                <td id="temp6">28 °C</td>
+                <td id="temp7">18 °C</td>
                 
             </tr>
 
@@ -140,6 +129,23 @@
     </div>
     <!-- Footer -->
 
+    <div class="container_footer">
+        <div class="footer-content">
+            <p>&copy; 2023 MyWeatherApp. All rights reserved.</p>
+            <p>Designed by <a href="https://www.linkedin.com/in/adrian-michalski-5b85091a1/" rel="noopener" target="_blank">Adrian Michalski</a></p>
+            <p>
+                Icons by <a href="https://www.flaticon.com/authors/freepik" title="Freepik" target="_blank" rel="noopener">Freepik</a> 
+                from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank" rel="noopener">Flaticon</a>
+            </p>
+            <p>
+                Weather data by <a href="https://openweathermap.org/" target="_blank" rel="noopener">OpenWeatherMap</a>
+            </p>
+            <p>
+                API used: <a href="https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={API_KEY}" target="_blank" rel="noopener">OpenWeatherMap API</a>
+            </p>
+        </div>
+    </div>
+    
     <script src="./Server/server.js">  
     </script>  
 </body>

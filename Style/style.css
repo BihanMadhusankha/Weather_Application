@@ -53,6 +53,7 @@ a:hover{
     font-size: 40px;
     color: white !important;   
 }
+
 .search_container{
     display: flex;
     flex-direction: row;
@@ -81,11 +82,12 @@ a:hover{
     font-size: 15px;
     font-weight: bold;
 }
+
 /*current_weather*/
 
 .container_currentweather{
     background-size: cover;
-    height: 400px;
+    height: 430px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
@@ -164,6 +166,7 @@ th i{
     margin-right: 5px;
 }
 
+
 /*weather forcasting*/
 
 .container_forcast_weather_datar{
@@ -234,4 +237,262 @@ th i{
 }
 .date{
    margin-right: 10px;
+}
+
+
+/* Fotter */
+.container_footer {
+    background-color: #282c34;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.footer-content a {
+    color: #61dafb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+/* 1380px and below */
+@media (max-width: 1390px) {
+    .container_heading{
+        
+        height: 33vh;
+        
+    }
+    .container_currentweather{
+        height: 430px;
+    }
+    #png_erth{
+        height: 7vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+    .welcome_heading {
+        padding-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 31px;
+        color: white !important; 
+    }
+    .form-control{
+        height: 40px;
+        width: 400px;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 5px;
+        margin-right: 10px;
+        margin-top: 0;
+    }
+   
+    
+    .table_current_location, .table_current_location th, .table_current_location td {
+        font-size: 18px;
+       
+    }
+
+    .table_current_location ,.table_forcast_weather_data{
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .container_forcast_weather_datar{
+        height: 370px;
+    }
+    .footer-content {
+        padding: 10px;
+        font-size: 12px;
+    }
+    .table_forcast_weather_data,.table_forcast_weather_data th,.table_forcast_weather_data td{
+        
+        font-size: 29px;
+    }
+}
+
+
+/* 780px and below */
+@media (max-width: 780px) {
+    
+  
+    .table_current_location, .table_current_location th, .table_current_location td {
+        font-size: 12px;
+       
+    }
+
+    .table_current_location ,.table_forcast_weather_data{
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .container_forcast_weather_datar{
+        height: 350px;
+    }
+    .footer-content {
+        padding: 10px;
+        font-size: 12px;
+    }
+    .table_forcast_weather_data,.table_forcast_weather_data th,.table_forcast_weather_data td{
+        font-size: 18px;
+    }
+    .current_weather_values{
+        font-size: 18px;
+    }
+}
+/* 600px and below */
+@media (max-width: 600px) {
+    .container_heading{
+        height: 33vh;
+    }
+    .container_currentweather{
+        height: 400px;
+    }
+    #png_erth{
+        height: 7vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+    .welcome_heading {
+        padding-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 31px;
+        color: white !important; 
+    }
+    .form-control{
+        height: 40px;
+        width: 400px;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 5px;
+        margin-right: 10px;
+        margin-top: 0;
+    }
+    #clock{
+        font-size: 20px;
+        
+    }
+    
+    .table_current_location, .table_current_location th, .table_current_location td {
+        font-size: 12px;
+       
+    }
+
+    .table_current_location ,.table_forcast_weather_data{
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .container_forcast_weather_datar{
+        height: 350px;
+    }
+    .footer-content {
+        padding: 10px;
+        font-size: 12px;
+    }
+    .table_forcast_weather_data,.table_forcast_weather_data th,.table_forcast_weather_data td{
+        font-size: 18px;
+    }
+    
+}
+/* 550px and below */
+@media (max-width: 550px) {
+    .container_heading{
+        height: 33vh;
+    }
+    .container_currentweather{
+        height: 400px;
+    }
+    #png_erth{
+        height: 5vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+    .welcome_heading {
+        padding-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+        color: white !important; 
+    }
+    .form-control{
+        height: 35px;
+        width: 300px;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 5px;
+        margin-right: 10px;
+        margin-top: 0;
+    }
+    #clock{
+        font-size: 14px;
+        
+    }
+    
+    .table_current_location, .table_current_location th, .table_current_location td {
+        font-size: 12px;
+       
+    }
+
+    .table_current_location ,.table_forcast_weather_data{
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .container_forcast_weather_datar{
+        height: 350px;
+    }
+    .footer-content {
+        padding: 10px;
+        font-size: 12px;
+    }
+    .table_forcast_weather_data,.table_forcast_weather_data th,.table_forcast_weather_data td{
+        font-size: 18px;
+    }
+    .current_weather_values p,h1{
+        font-size: 18px;
+    }
+    
 }
