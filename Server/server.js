@@ -16,6 +16,17 @@ function success(position) {
     const currentTempreture = document.getElementById('currentTempreture');
     const currentWeather = document.getElementById('currentWeather');
 
+
+    const searchLocation = document.getElementById('searchLocation');
+    const searchTemprature = document.getElementById('searchTemprature');
+    const searchHumidity = document.getElementById('searchHumidity');
+    const searchWindSpeed = document.getElementById('searchWindSpeed');
+    const searchCondition = document.getElementById('searchCondition');
+    const searchRegion = document.getElementById('searchRegion');
+    const searchCountry = document.getElementById('searchCountry');
+    const searchLongitude = document.getElementById('searchLongitude');
+    const searchLatitude = document.getElementById('searchLatitude');   
+
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
 
@@ -29,8 +40,31 @@ function success(position) {
             if (data.current) {
                 currentWeatherImage.src = `${data.current.condition.icon} `;
                 currentLocation.innerHTML = `${data.location.name} `;
-                currentTempreture.innerHTML = `${data.current.temp_c} °C`;
+                document.getElementById('celsiusBtn').addEventListener('click', () => {
+                    currentTempreture.innerHTML = `${data.current.temp_c} °C`;
+                });
+                document.getElementById('fahrenheitBtn').addEventListener('click', () => {
+                    currentTempreture.innerHTML = `${data.current.temp_f} F`;
+                });
+                
                 currentWeather.innerHTML = `${data.current.condition.text} `;
+                currentTempreture.innerHTML = `${data.current.temp_c} °C`;
+                searchLocation.innerHTML = `${data.location.name} `;
+                document.getElementById('celsiusBtn').addEventListener('click', () => {
+                    searchTemprature.innerHTML = `${data.current.temp_c} °C`;
+                });
+                document.getElementById('fahrenheitBtn').addEventListener('click', () => {
+                    searchTemprature.innerHTML = `${data.current.temp_f} F`;
+                });
+                searchTemprature.innerHTML = `${data.current.temp_c} °C`;
+                searchHumidity.innerHTML = `${data.current.humidity} `;
+                searchWindSpeed.innerHTML = `${data.current.wind_kph} `;
+                searchCondition.innerHTML = `${data.current.condition.text}`;
+                searchRegion.innerHTML = `${data.location.region} `;
+                searchCountry.innerHTML = `${data.location.country} `;
+                searchLongitude.innerHTML = `${data.location.lon}`;
+                searchLatitude.innerHTML = `${data.location.lat} `;
+                searchLatitude.innerHTML = `${data.location.lat} `;
                 currentMap(`${data.location.name} `);
             } else {
                 currentWeatherImage.src = "No data found";
@@ -70,19 +104,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchRegion = document.getElementById('searchRegion');
     const searchCountry = document.getElementById('searchCountry');
     const searchLongitude = document.getElementById('searchLongitude');
-    const searchLatitude = document.getElementById('searchLatitude');
+    const searchLatitude = document.getElementById('searchLatitude');   
+    const searchAlert = document.getElementById('alert');
 
     searchBtn.addEventListener("click", async (event) => {
         event.preventDefault();
 
         try {
             const searchVal = searchBar.value;
-            const response = await fetch(`${baseUrl}${apiKey}&q=${searchVal}&days=7`);
+            const response = await fetch(`${baseUrl}${apiKey}&q=${searchVal}&days=7&aqi=yes&alerts=yes`);
             const data = await response.json();
 
             if (data.current) {
 
                 searchLocation.innerHTML = `${data.location.name} `;
+                searchLocation.innerHTML = `${data.location.name} `;
+                document.getElementById('celsiusBtn').addEventListener('click', () => {
+                    searchTemprature.innerHTML = `${data.current.temp_c} °C`;
+                });
+                document.getElementById('fahrenheitBtn').addEventListener('click', () => {
+                    searchTemprature.innerHTML = `${data.current.temp_f} F`;
+                });
                 searchTemprature.innerHTML = `${data.current.temp_c} °C`;
                 searchHumidity.innerHTML = `${data.current.humidity} `;
                 searchWindSpeed.innerHTML = `${data.current.wind_kph} `;
@@ -91,6 +133,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 searchCountry.innerHTML = `${data.location.country} `;
                 searchLongitude.innerHTML = `${data.location.lon}`;
                 searchLatitude.innerHTML = `${data.location.lat} `;
+                searchLatitude.innerHTML = `${data.location.lat} `;
+                searchAlert.innerHTML = `${data.alerts.alert[0]} `;
             } else {
                 currentWeatherImage.src = "No data found";
             }
@@ -127,7 +171,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
                             document.getElementById(`weekDays${i + 1}`).innerHTML = `${data.forecast.forecastday[0].date}`
                             document.getElementById(`imageWeather${i + 1}`).src = `${data.forecast.forecastday[0].day.condition.icon}`
-                            document.getElementById(`temp${i + 1}`).innerHTML = `${data.forecast.forecastday[0].day.maxtemp_c} °C`
+                            document.getElementById('celsiusBtn').addEventListener('click', () => {
+                                document.getElementById(`temp${i + 1}`).innerHTML = `${data.forecast.forecastday[0].day.maxtemp_c} °C`
+                            });
+                            document.getElementById('fahrenheitBtn').addEventListener('click', () => {
+                               document.getElementById(`temp${i + 1}`).innerHTML = `${data.forecast.forecastday[0].day.maxtemp_f} F`
+                            });
+                            
 
                         })
                         .catch(error => {
