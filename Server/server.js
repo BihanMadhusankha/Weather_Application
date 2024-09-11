@@ -31,6 +31,7 @@ function success(position) {
                 currentLocation.innerHTML = `${data.location.name} `;
                 currentTempreture.innerHTML = `${data.current.temp_c} °C`;
                 currentWeather.innerHTML = `${data.current.condition.text} `;
+                currentMap(`${data.location.name} `);
             } else {
                 currentWeatherImage.src = "No data found";
             }
@@ -139,4 +140,58 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+
+    let map; // Declare a variable to hold the map instance
+
+    function initializeMap(latitude, longitude, pin) {
+        if (!map) {
+            map = L.map('map').setView([latitude, longitude], 13);
+    
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+        } else {
+            map.setView([latitude, longitude], 13);
+        }
+    
+        // Add a marker to the map
+        L.marker([latitude, longitude]).addTo(map)
+            .bindPopup(`Location: ${pin}`)
+            .openPopup();
+    }
+    
+    // Event listener for search button
+    document.getElementById("Search_btn").addEventListener("click", async () => {
+        try {
+            const searchVal = document.getElementById("Search_bar").value;
+            const { latitude, longitude } = await fetchLocationData(searchVal);
+            initializeMap(latitude, longitude, searchVal);
+        } catch (error) {
+            console.error('Error during fetch:', error);
+            // Handle errors
+        }
+    });
+    
+    async function currentMap(currentLocation) {
+        try {
+            const { latitude, longitude } = await fetchLocationData(currentLocation);
+            initializeMap(latitude, longitude, currentLocation);
+        } catch (error) {
+            console.error('Error during fetch:', error);
+            // Handle errors
+        }
+    }
+    
+    async function fetchLocationData(location) {
+        try {
+            const response = await fetch(`${baseUrl}${apiKey}&q=${location}&days=7`);
+            const data = await response.json();
+            return { latitude: data.location.lat, longitude: data.location.lon };
+        } catch (error) {
+            console.error('Error fetching location data:', error);
+            throw error; // Rethrow the error to handle it elsewhere if needed
+        }
+    }
+    
+    
 // °C

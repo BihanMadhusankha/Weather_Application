@@ -7,6 +7,9 @@
     <title>Weather Application</title>
     <link rel="stylesheet" href="Style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  
 </head>
 
 <body>
@@ -120,11 +123,12 @@
         </table>
     </div>
     <!-- Map -->
-     <div class="container_forcast_weather_datar">
+     <div class="container_forcast_weather_datar_map">
         <h1 class="forcast_weather_data_heading">Map<i class="fa-solid fa-map" style="color: #f78708;"></i></h1>
 
         <div class="forcast_weather_data_row">
-            
+            <div id="map"  ></div>
+
         </div>
     </div>
     <!-- Footer -->
@@ -132,11 +136,8 @@
     <div class="container_footer">
         <div class="footer-content">
             <p>&copy; 2023 MyWeatherApp. All rights reserved.</p>
-            <p>Designed by <a href="https://www.linkedin.com/in/adrian-michalski-5b85091a1/" rel="noopener" target="_blank">Adrian Michalski</a></p>
-            <p>
-                Icons by <a href="https://www.flaticon.com/authors/freepik" title="Freepik" target="_blank" rel="noopener">Freepik</a> 
-                from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank" rel="noopener">Flaticon</a>
-            </p>
+            <p>Designed by <a href="https://www.linkedin.com/in/bihan-madhusankha-2b61142b6/" rel="noopener" target="_blank">Bihan Madhusankha</a></p>
+           
             <p>
                 Weather data by <a href="https://openweathermap.org/" target="_blank" rel="noopener">OpenWeatherMap</a>
             </p>
