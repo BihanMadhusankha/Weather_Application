@@ -17,7 +17,7 @@ https://bihanmadhusankha.github.io/Weather-App/
 
 
 ## <a name="screenshots">Screenshots</a> 
-- ![weather]([https://bihanmadhusankha.github.io/Weather_Application/](https://bihanmadhusankha.github.io/Weather_Application/))
+- ![weather]
 
 
 ## <a name="features">Features</a> 
@@ -64,4 +64,4 @@ https://bihanmadhusankha.github.io/Weather-App/
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`API_KEY`= `f1850d9ec02649c4b0a84749240403`
+`API_KEY`= ``
