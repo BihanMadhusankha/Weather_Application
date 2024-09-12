@@ -17,7 +17,7 @@ https://bihanmadhusankha.github.io/Weather-App/
 
 
 ## <a name="screenshots">Screenshots</a> 
-- ![weather](https://github.com/BihanMadhusankha/Weather-App/assets/140598111/83faf678-8416-4a9d-a15e-2c69abd65c8f)
+- ![weather](https://bihanmadhusankha.github.io/Weather_Application/)
 
 
 ## <a name="features">Features</a> 
