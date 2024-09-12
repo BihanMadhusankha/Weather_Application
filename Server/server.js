@@ -8,7 +8,7 @@ if (navigator.geolocation) {
     console.log("Geolocation is not supported by this browser.");
 }
 
-// User Current Location
+
 function success(position) {
 
     const currentWeatherImage = document.getElementById('currentWeatherImage');
@@ -74,7 +74,7 @@ function success(position) {
 
 }
 
-// digital clock
+
 function updateClock() {
     const today = new Date();
     let h = today.getHours();
@@ -92,7 +92,7 @@ updateClock();
 setInterval(updateClock, 1000);
 
 
-//Search location
+
 document.addEventListener("DOMContentLoaded", () => {
     const searchBar = document.getElementById("Search_bar");
     const searchBtn = document.getElementById("Search_btn");
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// weather forcasting
+
 document.addEventListener("DOMContentLoaded", () => {
     
         const searchBtn = document.getElementById("Search_btn");
@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
             searchBtn.addEventListener("click", async (event) => {
                 event.preventDefault();
                 for (let i = 0; i < 7; i++) {
-                    //hethuw blann toISOString, split
+                    
                     const formattedDate = currentDay.toISOString().split('T')[0];
 
                     fetch(`${baseUrl}${apiKey}&q=${searchVal}&days=7&dt=${formattedDate}&aqi=homagama&alerts=yes`)
@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    let map; // Declare a variable to hold the map instance
+    let map; 
 
     function initializeMap(latitude, longitude, pin) {
         if (!map) {
@@ -204,13 +204,13 @@ document.addEventListener("DOMContentLoaded", () => {
             map.setView([latitude, longitude], 13);
         }
     
-        // Add a marker to the map
+        
         L.marker([latitude, longitude]).addTo(map)
             .bindPopup(`Location: ${pin}`)
             .openPopup();
     }
     
-    // Event listener for search button
+    
     document.getElementById("Search_btn").addEventListener("click", async () => {
         try {
             const searchVal = document.getElementById("Search_bar").value;
@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
             initializeMap(latitude, longitude, searchVal);
         } catch (error) {
             console.error('Error during fetch:', error);
-            // Handle errors
+            
         }
     });
     
@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
             initializeMap(latitude, longitude, currentLocation);
         } catch (error) {
             console.error('Error during fetch:', error);
-            // Handle errors
+            
         }
     }
     
@@ -239,9 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return { latitude: data.location.lat, longitude: data.location.lon };
         } catch (error) {
             console.error('Error fetching location data:', error);
-            throw error; // Rethrow the error to handle it elsewhere if needed
+            throw error; 
         }
     }
     
-    
-// °C
